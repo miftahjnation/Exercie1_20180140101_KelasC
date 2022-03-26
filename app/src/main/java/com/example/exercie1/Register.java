@@ -18,6 +18,9 @@ public class Register extends AppCompatActivity {
     EditText edRgUser, edRgEmail, edRgPass, edRgRepass;
     Button btnRgs;
 
+    //Deklarasi variable untuk penyimpan data dari edittext
+    String userRgs1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +35,53 @@ public class Register extends AppCompatActivity {
         btnRgs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Untuk menyimpan input dari edittext user dan pass dari halaman Sign In
+                userRgs1= edRgUser.getText().toString();
 
+                if(edRgUser.getText().toString().isEmpty() &&
+                        edRgEmail.getText().toString().isEmpty() &&
+                        edRgPass.getText().toString().isEmpty() &&
+                        edRgRepass.getText().toString().isEmpty())
+                {
+                    //Menampilkan pesan notifikasi jika seluruh EditText kosong
+                    Snackbar.make(view, "Wajib isi seluruh data !!!", Snackbar.LENGTH_LONG).show();
+                    edRgUser.setError("User wajib diisi");
+                    edRgEmail.setError("Email wajib diisi");
+                    edRgPass.setError("Password wajib diisi");
+                    edRgRepass.setError("Re-password wajib diisi");
+                }
+                else
+                {
+                    //Membuat kondisi untuk mengecek apakah isi dari EditText password dan EditText repassword
+                    //sama atau tidak
+                    if(edRgPass.getText().toString().equals(edRgRepass.getText().toString()))
+                    {
+
+
+                        //Menampilkan pesan notifikasi jika pendaftaran berhasil
+                        Toast.makeText(getApplicationContext(), "Pendaftaran Berhasil...", Toast.LENGTH_LONG).show();
+
+                        Bundle b1 = new Bundle();
+                        //key parsing data dimasukkan kedalam bundle
+                        b1.putString("user2", userRgs1.trim());
+
+                        //Method untuk berhasil masuk ke Halaman Input Todo
+                        Intent iTd = new Intent(getApplicationContext(), InputTodo.class);
+                        //Memasukkan bundle ke dalam target
+                        iTd.putExtras(b1);
+                        //berpindah ke halaman lain
+                        startActivity(iTd);
+
+
+                    }
+                    else
+                    {
+                        //Menampilkan pesan bahwa isi dari EditText password dan EditText repassword
+                        //tidak sama
+                        Snackbar.make(view, "Password dan Repassword harus sama !!!", Snackbar.LENGTH_LONG).show();
+                    }
+
+                }
             }
         });
 

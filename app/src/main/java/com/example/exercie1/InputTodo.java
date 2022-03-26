@@ -17,15 +17,23 @@ public class InputTodo extends AppCompatActivity {
         setContentView(R.layout.activity_input_todo);
 
         //Menghubungkan variable text view dengan component TextView pada activity_input_todo
-        txUserLgn = findViewById(R.id.lInputRoL);
+        txUserLgn = findViewById(R.id.lInputLgn);
 
+        //Menghubungkan variable text view dengan component TextView pada activity_input_todo
+        txUserRgs = findViewById(R.id.lInputRgs);
         //Mendeklarasikan variable bundle untuk mengambil pesan yang dikirimkan dengan method intent
         Bundle bundle = getIntent().getExtras();
 
         //Membuat variable untuk menampung data dari activity Sign In
         String userSgn = bundle.getString("user1");
 
+        //Membuat variable untuk menampung data dari activity Sign In
+        String userRgs = bundle.getString("user2");
+
         txUserLgn.setText(userSgn);
+        txUserRgs.setText(userRgs);
+
+
 
 
 
