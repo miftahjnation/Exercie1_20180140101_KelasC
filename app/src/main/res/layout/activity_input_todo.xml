@@ -30,12 +30,12 @@
         android:textColor="@color/blueRegister"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/lWelcome"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.050"
-        app:layout_constraintHorizontal_bias="0.569" />
+        app:layout_constraintHorizontal_bias="0.050"  />
 
     <TextView
         android:id="@+id/lInputRgs"
@@ -45,12 +45,12 @@
         android:textColor="@color/blueRegister"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/lWelcome"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.050"
-        app:layout_constraintHorizontal_bias="0.569" />
+        app:layout_constraintHorizontal_bias="0.050" />
 
     <TextView
         android:id="@+id/lTask1"
