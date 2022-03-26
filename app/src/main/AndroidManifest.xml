@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Exercie1">
         <activity
+            android:name=".HasilToDo"
+            android:exported="false"
+            android:parentActivityName=".InputTodo"/>
+        <activity
             android:name=".InputTodo"
             android:exported="false" />
         <activity
