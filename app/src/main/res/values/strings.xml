@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Todo App</string>
+    <string name="wc_todo">Welcome in Todo App</string>
+    <string name="hNamaLgn">Masukkan Nama</string>
+    <string name="hPwLgn">Masukkan Password</string>
+    <string name="hEmail">Masukkan Email</string>
+    <string name="hRepass">Masukkan Kembali Password</string>
+    <string name="hTask">Masukkan Task</string>
+    <string name="hJTask">Masukkan Jenis Task</string>
+    <string name="hTTask">Masukkan Lama Task</string>
+    <string name="hSubmit">Submit</string>
+    <string name="hLogout">Logout</string>
+    <string name="lWelcome">Selamat Datang</string>
+    <string name="lUserRoL">Input</string>
+    <string name="lTask">Task</string>
+    <string name="lJTask">Jenis Task</string>
+    <string name="lTTask">Time Task</string>
+    <string name="lNama">Nama</string>
+    <string name="lEmail">Email</string>
+    <string name="lPass">Password</string>
+    <string name="lRePass">Re - Password</string>
+    <string name="btnSignIn">SIGN IN</string>
+    <string name="newToDoApp">New to Todo App?</string>
+    <string name="lRegisterSgIn">Register</string>
+</resources>
