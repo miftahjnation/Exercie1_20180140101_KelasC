@@ -1,6 +1,6 @@
 package com.example.exercie1;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -153,6 +153,16 @@ public class InputTodo extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.mnLogout)
+        {
+            //Method untuk kembali ke halaman SignIn atau logout
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+        }else if(item.getItemId() == R.id.mnSubmit)
+        {
+
+
+        }
         return super.onOptionsItemSelected(item);
     }
 }
