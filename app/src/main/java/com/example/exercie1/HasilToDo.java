@@ -24,7 +24,15 @@ public class HasilToDo extends AppCompatActivity {
         //Membuat objek bundle dan mengambil data yang dikirimkan dari activity InputTodo
         Bundle bundle = getIntent().getExtras();
 
+        //Membuat variable untuk menampung data dari activity Input ToDo
+        String inptTask = bundle.getString("task");
+        String inptJTask = bundle.getString("jtask");
+        String inptTTask = bundle.getString("ttask");
 
+        //berguna untuk mengubah textview menjadi data yang berasal dari activity Input ToDo
+        txTask.setText(inptTask);
+        txJTask.setText(inptJTask);
+        txTTask.setText(inptTTask);
 
     }
 }
