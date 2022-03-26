@@ -19,7 +19,7 @@ public class Register extends AppCompatActivity {
     Button btnRgs;
 
     //Deklarasi variable untuk penyimpan data dari edittext
-    String userRgs1;
+    String userRgs1,emailRgs,passRgs,rePassRgs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +35,13 @@ public class Register extends AppCompatActivity {
         btnRgs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Untuk menyimpan input dari edittext user dan pass dari halaman Sign In
+                //Untuk menyimpan input dari edittext pada halaman Register
                 userRgs1= edRgUser.getText().toString();
+                emailRgs = edRgEmail.getText().toString();
+                passRgs = edRgPass.getText().toString();
+                rePassRgs = edRgRepass.getText().toString();
 
-                if(edRgUser.getText().toString().isEmpty() &&
-                        edRgEmail.getText().toString().isEmpty() &&
-                        edRgPass.getText().toString().isEmpty() &&
-                        edRgRepass.getText().toString().isEmpty())
+                if(userRgs1.isEmpty() && emailRgs.isEmpty() && passRgs.isEmpty() && rePassRgs.isEmpty())
                 {
                     //Menampilkan pesan notifikasi jika seluruh EditText kosong
                     Snackbar.make(view, "Wajib isi seluruh data !!!", Snackbar.LENGTH_LONG).show();
@@ -49,9 +49,8 @@ public class Register extends AppCompatActivity {
                     edRgEmail.setError("Email wajib diisi");
                     edRgPass.setError("Password wajib diisi");
                     edRgRepass.setError("Re-password wajib diisi");
-
                 }
-                else if(edRgPass.getText().toString().isEmpty() && edRgRepass.getText().toString().isEmpty())
+                else if(passRgs.isEmpty() && rePassRgs.isEmpty())
                 {
                     //Menampilkan pesan notifikasi jika password kosong
                     Toast.makeText(getApplicationContext(), "Silahkan isi Password dan Repassword", Toast.LENGTH_LONG).show();
@@ -60,7 +59,7 @@ public class Register extends AppCompatActivity {
                 {
                     //Membuat kondisi untuk mengecek apakah isi dari EditText password dan EditText repassword
                     //sama atau tidak
-                    if(edRgPass.getText().toString().equals(edRgRepass.getText().toString()))
+                    if(passRgs.equals(rePassRgs))
                     {
 
 
