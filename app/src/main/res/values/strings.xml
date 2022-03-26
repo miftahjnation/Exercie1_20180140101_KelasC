@@ -12,6 +12,7 @@
     <string name="hLogout">Logout</string>
     <string name="lWelcome">Selamat Datang</string>
     <string name="lUserRoL">Input</string>
+    <string name="lHasil">Hasil</string>
     <string name="lTask">Task</string>
     <string name="lJTask">Jenis Task</string>
     <string name="lTTask">Time Task</string>
