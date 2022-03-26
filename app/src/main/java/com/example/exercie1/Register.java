@@ -49,6 +49,12 @@ public class Register extends AppCompatActivity {
                     edRgEmail.setError("Email wajib diisi");
                     edRgPass.setError("Password wajib diisi");
                     edRgRepass.setError("Re-password wajib diisi");
+
+                }
+                else if(edRgPass.getText().toString().isEmpty() && edRgRepass.getText().toString().isEmpty())
+                {
+                    //Menampilkan pesan notifikasi jika password kosong
+                    Toast.makeText(getApplicationContext(), "Silahkan isi Password dan Repassword", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
@@ -71,8 +77,6 @@ public class Register extends AppCompatActivity {
                         iTd.putExtras(b1);
                         //berpindah ke halaman lain
                         startActivity(iTd);
-
-
                     }
                     else
                     {
