@@ -158,9 +158,78 @@ public class InputTodo extends AppCompatActivity {
             //Method untuk kembali ke halaman SignIn atau logout
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
+            //Menampilkan pesan jika berhasil logout
+            Toast.makeText(getApplicationContext(), "Berhasil Logout, Terima Kasih!", Toast.LENGTH_LONG).show();
         }else if(item.getItemId() == R.id.mnSubmit)
         {
+            //Untuk menyimpan input dari edittext pada halaman Input ToDo
+            sTask = edTask.getText().toString();
+            sJTask = edJTask.getText().toString();
+            sTTask = edTTask.getText().toString();
 
+            if(sTask.isEmpty() && sJTask.isEmpty() && sTTask.isEmpty())
+            {
+                //Menampilkan pesan notifikasi jika seluruh EditText kosong
+                Toast.makeText(getApplicationContext(), "Wajib isi semua data!", Toast.LENGTH_LONG).show();
+                edTask.setError("Task wajib diisi");
+                edJTask.setError("Jenis task wajib diisi");
+                edTTask.setError("Time task wajib diisi");
+            }
+            //Statement jika hanya Task yang diisi.
+            else if(sJTask.isEmpty() && sTTask.isEmpty())
+            {
+                Toast.makeText(getApplicationContext(), "Silahkan isi Jenis task dan Time task", Toast.LENGTH_LONG).show();
+                edJTask.setError("Jenis task wajib diisi");
+                edTTask.setError("Time task wajib diisi");
+            }
+            //Statement jika hanya Jenis Task yang diisi.
+            else if(sTask.isEmpty() && sTTask.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Silahkan isi Task dan Time task", Toast.LENGTH_LONG).show();
+                edTask.setError("Task wajib diisi");
+                edTTask.setError("Time task wajib diisi");
+            }
+            //Statement jika hanya Time Task yang diisi.
+            else if(sTask.isEmpty() && sJTask.isEmpty())
+            {
+                Toast.makeText(getApplicationContext(), "Silahkan isi Task dan Jenis task", Toast.LENGTH_LONG).show();
+                edTask.setError("Task wajib diisi");
+                edJTask.setError("Jenis task wajib diisi");
+            }
+            //Statement jika hanya  Task yang kosong.
+            else if(sTask.isEmpty())
+            {
+                Toast.makeText(getApplicationContext(), "Silahkan isi Task!", Toast.LENGTH_LONG).show();
+                edTask.setError("Task wajib diisi");
+            }
+            //Statement jika hanya Jenis Task yang kosong.
+            else if(sJTask.isEmpty())
+            {
+                Toast.makeText(getApplicationContext(), "Silahkan isi Jenis task", Toast.LENGTH_LONG).show();
+                edJTask.setError("Jenis task wajib diisi");
+            }
+            //Statement jika hanya Time Task yang kosong.
+            else if(sTTask.isEmpty())
+            {
+                Toast.makeText(getApplicationContext(), "Silahkan isi Time task", Toast.LENGTH_LONG).show();
+                edTTask.setError("Jenis task wajib diisi");
+            }
+            else {
+                //Menampilkan pesan notifikasi jika Data Berhasil diinput
+                Toast.makeText(getApplicationContext(), "Data Berhasil Dimasukkan", Toast.LENGTH_LONG).show();
+
+                Bundle b = new Bundle();
+                //key parsing data dimasukkan kedalam bundle
+                b.putString("task", sTask.trim());
+                b.putString("jtask", sJTask.trim());
+                b.putString("ttask", sTTask.trim());
+
+                //Method untuk berhasil masuk ke Halaman Input Todo
+                Intent iHd = new Intent(getApplicationContext(), HasilToDo.class);
+                //Memasukkan bundle ke dalam target
+                iHd.putExtras(b);
+                //berpindah ke halaman lain
+                startActivity(iHd);
+            }
 
         }
         return super.onOptionsItemSelected(item);
